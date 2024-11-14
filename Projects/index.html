@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ <title>Projects</title>
+ <style>
+ /* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+    /* Center everything in the viewport */
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        background-color: #000000;
+        font-family: Arial, sans-serif;
+        color: #fff;
+        height: 99.1vh;
+    }
+    /* Header Styles */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 10vh;
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    padding: 0 20px;
+    box-shadow: 0 0 10px white;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo .ico {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #FFCC00;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* Desktop Navigation */
+header nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+    filter: drop-shadow(0 0 10px blue);
+}
+
+/* Burger Menu for Mobile */
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger i {
+    font-size: 28px;
+    color: #fff;
+}
+
+/* Mobile Navigation */
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav-active {
+    display: flex;
+    flex-direction: column;
+    background-color: #000;
+    position: absolute;
+    top: 10vh;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+}
+
+@media (max-width: 768px) {
+    header nav ul {
+        display: none;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-active {
+        display: flex;
+    }
+}
+
+/* Mobile Navigation */
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+/* Burger Menu for Mobile */
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger i {
+    font-size: 28px;
+    color: #fff;
+}
+
+/* Mobile Navigation */
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav-active {
+    display: flex;
+    flex-direction: column;
+    background-color: #000;
+    position: absolute;
+    top: 10vh;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 0;
+    margin:0;
+}
+
+@media (max-width: 768px) {
+    header nav ul {
+        display: none;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-active {
+        display: flex;
+    }
+}
+
+    h2 {
+    font-size: 3rem;
+    margin-top: 10px;
+    color: #FFCC00;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+
+    /* Main container */
+    .main-container {
+       position:fixed;
+        width: 100%;
+        max-width: 600px;
+        background-color: #222;
+        border-radius: 40px;
+        padding: 20px;
+        box-shadow: 0px 8px 15px rgba(229, 174, 13, 0.4);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Filter buttons */
+    .filter-container {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 15px;
+    }
+
+    .filter-container button {
+        padding: 10px 50px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+        transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    }
+
+    .filter-container button:hover {
+        background-color: #555;
+        transform: scale(1.05);
+        box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Projects container with scroll */
+    .projects-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 20px;
+        width: 100%;
+        overflow-y: auto; /* Enable scrolling */
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: inset 0px 8px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Project item styling */
+    .project-item {
+        background-color: #333;
+        border-radius: 8px;
+        overflow: hidden;
+        text-align: center;
+        transition: transform 0.3s, box-shadow 0.3s;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .project-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+        background-color: #444;
+    }
+
+    /* Image styling for projects */
+    .project-item img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Title styling below image */
+    .project-item p {
+        color:hsla(77, 0%, 100%, 1);
+        margin: 1px 0 0;
+        font-size: 1rem;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 600px) {
+        .projects-container {
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        }
+            /* Main container */
+    .main-container {
+        width: 90%;
+        background-color: #222;
+        border-radius: 40px;
+        padding: 20px;
+        box-shadow: 0px 8px 15px rgba(229, 174, 13, 0.4);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .filter-container button {
+        padding: 10px 30px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+        transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    }
+
+    }
+    /* Default footer styles */
+footer {
+    background-color: #000000;
+    padding: 20px;
+    text-align: center;
+    margin-top: 170%;
+    margin-bottom: 0%;
+    height:10vh;
+    width: 100%;
+    box-shadow: 0 0 10px white;
+}
+
+.social-media-links {
+    display: flex;
+    justify-content: center;
+    gap: 80px; /* Add space between icons */
+}
+
+.social-media-links a {
+    color: #fff;
+    font-size: 40px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-media-links a:hover {
+    color: #f39c12;
+}
+
+.social-media-links i {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.social-media-links a:hover i {
+    transform: scale(1.2); /* Slight zoom effect on hover */
+}
+
+/* Media query for mobile devices */
+@media (max-width: 600px) {
+    footer {
+        padding: 15px;
+        Margin-top: 170%;
+        height: 10vh;
+        width: 100%;
+    }
+
+    .social-media-links a {
+        font-size: 30px;
+        margin-top: 0 8px;
+    }
+}
+
+
+</style>
+</head>
+<header>
+    <div class="logo">
+        <div class="ico">D</div>
+        <h1>anish Memon</h1>
+    </div>
+    <nav>
+        <div class="burger">
+        <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/index 2.html">About</a></li>
+            <li><a href="/index 3.html">Services</a></li>
+           <li><a href="/Projects /index.html">Resume</a></li>
+
+            <li><a href="/Contact /index 1.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<body>
+ 
+    <div class="main-container">
+     <h2>Projects</h2>
+        <!-- Filter buttons -->
+        <div class="filter-container">
+            <button onclick="filterProjects('all')">All</button>
+            <button onclick="filterProjects('graphic')">Graphic Design</button>
+            <button onclick="filterProjects('web')">Web Design</button>
+        </div>
+
+        <!-- Scrollable projects container -->
+<div class="projects-container">
+    <a href="/Projects /index project1.html"> <!-- Add your project link here -->
+        <div class="project-item web">
+            <img src="/Projects /IMG_20241110_123700.jpg" alt="Web Project 1">
+            <p>⏰ Clock</p>
+        </div>
+    </a>
+</div>
+
+            <!-- Add more projects as needed -->
+        </div>
+    </div>
+    <footer>
+            <div class="social-media-links">
+            <a href="https://www.instagram.com/danish_memon99/profilecard/?igsh=MTVhd2dxM3FvZ3Zwbg==" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61557986312689&mibextid=ZbWKwL" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="/Contact /index 1.html" /a><i class="fas fa-envelope"></i> 
+</div>
+
+        </div>
+</footer>
+
+
+    <script>
+                // Mobile Menu Toggle Script
+        const burger = document.querySelector('.burger');
+        const navLinks = document.querySelector('.nav-links');
+
+        burger.addEventListener('click', () => {
+            navLinks.classList.toggle('nav-active');
+        });
+
+        function filterProjects(category) {
+            const projects = document.querySelectorAll('.project-item');
+
+            projects.forEach((project) => {
+                if (category === 'all') {
+                    project.style.display = 'block';
+                } else if (project.classList.contains(category)) {
+                    project.style.display = 'block';
+                } else {
+                    project.style.display = 'none';
+                }
+            });
+        }
+
+        // Initialize with "All" filter
+        filterProjects('all');
+    </script>
+</body>
+</html>
