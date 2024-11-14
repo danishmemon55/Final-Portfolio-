@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Form</title>
     <style>
-        /* Import Google Fonts */
+     /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 /* Global Styles */
@@ -402,8 +402,8 @@ input::placeholder, textarea::placeholder {
 .social-media-links a:hover::before {
   animation: pulse 1s infinite;
 }
+
     </style>
-        
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
@@ -417,12 +417,12 @@ input::placeholder, textarea::placeholder {
         <i class="fas fa-bars"></i>
         </div>
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="index 2.html">About</a></li>
-            <li><a href="index.html">Services</a></li>
-           <li><a href="Projects/index.html">Resume</a></li>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/index 2.html">About</a></li>
+            <li><a href="/index.html">Services</a></li>
+           <li><a href="/Projects /index.html">Resume</a></li>
 
-            <li><a href="Contact/index 1.html">Contact</a></li>
+            <li><a href="/Contact /index 1.html">Contact</a></li>
         </ul>
     </nav>
 </header>
@@ -474,36 +474,38 @@ input::placeholder, textarea::placeholder {
         burger.addEventListener('click', () => {
             navLinks.classList.toggle('nav-active');
         });
-        const form = document.getElementById('contactForm');
+        </script>
+    <script>
+     const form = document.getElementById('contactForm');
 const alertBox = document.getElementById('successAlert');
 
-form.addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent form submission
+form.addEventListener('submit', function(event) {
+ event.preventDefault(); // Prevent form submission
 
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
+ const name = document.getElementById('name').value;
+ const email = document.getElementById('email').value;
+ const message = document.getElementById('message').value;
 
-    // Send the form data using EmailJS
-    emailjs.send("service_yy93huj", "template_s6ne75p", {
-        from_name: name,
-        from_email: email,
-        message: message
-    }).then(function(response) {
-        // Show success alert
-        alertBox.classList.add('show');
-        
-        // Hide alert after 3 seconds
-        setTimeout(() => {
-            alertBox.classList.remove('show');
-        }, 3000);
+ // Send the form data using EmailJS
+ emailjs.send("service_yy93huj", "template_s6ne75p", {
+  from_name: name,
+  from_email: email,
+  message: message
+ }).then(function(response) {
+  // Show success alert
+  alertBox.classList.add('show');
 
-        // Reset the form
-        form.reset();
-    }, function(error) {
-        console.error('Failed to send message', error);
-        alert('Failed to send message. Please try again later.'); // Fixed the line break
-    });
+  // Hide alert after 3 seconds
+  setTimeout(() => {
+   alertBox.classList.remove('show');
+  }, 3000);
+
+  // Reset the form
+  form.reset();
+ }, function(error) {
+  console.error('Failed to send message', error);
+  alert('Failed to send message. Please try again later.'); // Fixed the line break
+ });
 });
     </script>
 </body>
