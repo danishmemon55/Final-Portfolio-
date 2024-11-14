@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/style 2.css">
+</head>
+<body>
+<header>
+    <div class="logo">
+        <div class="ico">D</div>
+        <h1>anish Memon</h1>
+    </div>
+    <nav>
+        <div class="burger">
+        <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/index 2.html">About</a></li>
+            <li><a href="/index.html">Services</a></li>
+           <li><a href="/Projects /index.html">Resume</a></li>
+
+            <li><a href="/Contact /index 1.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="animated-bg"></div>
+       <div class="container-wrapper">
+        <div class="container">
+            <h2 class="about-title">About Me</h2>
+            <p class="about-description">
+            Hello, I'm <span class="highlight">Danish Memon</span> from Pakistan. I've built a personal portfolio that highlights my expertise in front-end web development and graphic design. This project reflects my passion for crafting seamless, visually appealing websites using HTML, CSS, and JavaScript. I am driven by a constant desire to push the boundaries of web design, combining creativity with technical skill to deliver engaging and modern digital experiences.
+            </p>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion('educationContent')">
+                        <h2>Education</h2>
+                    </div>
+                    <div class="accordion-content" id="educationContent">
+                        <p>Matriculation</p>
+                        <p>Continue</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion('ageContent')">
+                        <h2>Age</h2>
+                    </div>
+                    <div class="accordion-content" id="ageContent">
+                        <p>18 Years Old</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion('skillsContent')">
+                        <h2>Skills</h2>
+                    </div>
+                    <div class="accordion-content" id="skillsContent">
+                        <ul>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                           <li>JavaScript</li>
+                            <li>Graphic Design</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <p class="contact-text">Feel free to <a href="/Contact /index 1.html">contact me</a> for web development projects or graphic design.</p>
+        </div>
+        </div>
+    </section>
+    <footer>
+            <div class="social-media-links">
+            <a href="https://www.instagram.com/danish_memon99/profilecard/?igsh=MTVhd2dxM3FvZ3Zwbg==" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61557986312689&mibextid=ZbWKwL" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="/Contact /index 1.html" /a><i class="fas fa-envelope"></i> 
+</div>
+
+        </div>
+</footer>
+
+      <script>
+            // Mobile Menu Toggle Script
+        const burger = document.querySelector('.burger');
+        const navLinks = document.querySelector('.nav-links');
+
+        burger.addEventListener('click', () => {
+            navLinks.classList.toggle('nav-active');
+        });
+    </script>
+
+    <script src="/script 2.js"></script>
+</body>
+</html>

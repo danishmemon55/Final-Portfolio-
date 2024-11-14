@@ -1,0 +1,437 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Global Styles */
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+body {
+ font-family: 'Poppins', sans-serif;
+ background-color: #000;
+ color: #fff;
+ position: fixed;
+}
+@media (max-width: 768px) {
+ body{
+  font-family: 'Poppins', sans-serif;
+ background-color: #000;
+ color: #fff;
+ position: relative;
+}
+}
+ 
+/* Header Styles */
+header {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ width: 100%;
+ height: 10vh;
+ background-color: #000;
+ position: fixed;
+ top: 0;
+ z-index: 10;
+ padding: 0 20px;
+ box-shadow: 0 0 10px white;
+}
+
+header .logo {
+ display: flex;
+ align-items: center;
+}
+
+header .logo .ico {
+ width: 50px;
+ height: 50px;
+ border-radius: 50%;
+ background-color: #FFCC00;
+ color: #000;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ font-size: 32px;
+ font-weight: bold;
+ margin-right: 10px;
+}
+
+/* Desktop Navigation */
+header nav ul {
+ display: flex;
+ gap: 20px;
+}
+
+header nav ul li a {
+ color: #fff;
+ font-size: 18px;
+ font-weight: 600;
+ text-decoration: none;
+ transition: all 0.3s ease;
+}
+
+header nav ul li a:hover {
+ text-decoration: underline;
+ filter: drop-shadow(0 0 10px blue);
+}
+
+/* Burger Menu for Mobile */
+.burger {
+ display: none;
+ cursor: pointer;
+}
+
+.burger i {
+ font-size: 28px;
+ color: #fff;
+}
+
+/* Mobile Navigation */
+.nav-links {
+ display: flex;
+ gap: 20px;
+ list-style: none;
+}
+
+.nav-active {
+ display: flex;
+ flex-direction: column;
+ background-color: #000;
+ position: absolute;
+ top: 10vh;
+ right: 0;
+ width: 100%;
+ text-align: center;
+ padding: 20px 0;
+}
+
+@media (max-width: 768px) {
+ header nav ul {
+  display: none;
+ }
+
+ .burger {
+  display: block;
+ }
+
+ .nav-links {
+  display: none;
+ }
+
+ .nav-active {
+  display: flex;
+ }
+}
+
+/* Home Section Styles */
+#home {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 50vh;
+ padding: 20px;
+ background: linear-gradient(135deg, #000000, #000000);
+}
+
+.home {
+ display: flex;
+ justify-content: space-between;
+ gap: 20px;
+ width: 100%;
+ max-width: 1200px;
+ margin: 0 auto;
+}
+
+.home .image {
+ margin-top: 7%;
+ width: 290px;
+ height: 290px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ background-color: #fff;
+ border-radius: 50%;
+ border: 1px solid black;
+ box-shadow: 0 0 10px white;
+}
+
+.home .image img {
+ width: 100%;
+ height: auto;
+ border-radius: 50%;
+}
+
+.home .home-content {
+ flex: 1;
+ margin-left: 40px;
+ max-width: 600px;
+ padding: 40px;
+ background: rgba(0, 0, 0, 1);
+ border-radius: 20px;
+ box-shadow: 0 1px 30px 10px rgba(36, 28, 28, 0.8);
+ backdrop-filter: blur(15px);
+ z-index: 1;
+ animation: zoomIn 1.5s ease-in-out;
+}
+
+.home .home-content h2 {
+ font-size: 25px;
+ margin-bottom: 10px;
+}
+
+.home .home-content h2 span {
+ color: blue;
+ font-size: 30px;
+ filter: drop-shadow(0 0 10px black);
+}
+
+.home .home-content h1 {
+ font-size: 35px;
+ font-weight: bold;
+ color: greenyellow;
+ margin-bottom: 20px;
+}
+
+.home .home-content p {
+ font-size: 1.5rem;
+ margin-bottom: 20px;
+}
+
+.contact-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FFCC00;
+    color: #000;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.contact-button:hover {
+    background-color: #ffa500;
+    color: #fff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .home {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        text-align: center;
+        margin-top: 400px;
+        width: 120%;
+    }
+
+    .home .image {
+        width: 200px;
+        height: 200px;
+        margin-bottom: -10px;
+    }
+
+    .home .home-content {
+        margin-left: 0;
+        text-align: left;
+    }
+
+    .home .home-content h2 {
+        font-size: 15px;
+    }
+
+    .home .home-content h1 {
+        font-size: 20px;
+    }
+
+    .home .home-content p {
+        font-size: 14px;
+    }
+
+.contact-button{
+        font-size: 16px;
+        padding: 8px 15px;
+    }
+}
+/* Services Section */
+.services-section {
+    position: relative;
+    text-align: center;
+    color: white;
+    padding: 100px 20px 20px;
+    margin-top: -250px;
+}
+
+.services-section h1 {
+    font-size: 5rem; /* Large size for desktops */
+    margin-bottom: 50px;
+    margin-top: 40px;
+    color: FFCC00;
+    letter-spacing: 1px;
+}
+
+/* Service Cards */
+.service-cards {
+    display: flex;
+    gap: 45px;
+    justify-content: center;
+    perspective: 1000px;
+    margin-top: 20px;
+}
+
+.service-card {
+    background: linear-gradient(135deg, rgba(0, 33, 134, 0.1), rgba(255, 255, 255, 0.2));
+    width: 400px;
+    height: 600px;
+    border-radius: 25px;
+    padding: 35px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.8s ease, box-shadow 0.4s ease;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.service-card:hover {
+    transform: rotateY(15deg) rotateX(10deg) scale(1.05);
+    box-shadow: 0 15px 25px 30px rgba(33, 29, 35, 0.5);
+}
+
+.card-content {
+    transform: translateZ(50px);
+    color: #fff;
+}
+
+.service-card h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #FFCC00;
+    text-transform: uppercase;
+}
+
+.service-card p {
+    font-size: 1.5rem;
+    line-height: 1.7;
+    color: #fff;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+     .services-section{
+      max-height: 50vh;
+     }
+    .services-section h1 {
+        font-size: 35px; /* Smaller size for mobile */
+        margin-top: 150%;
+        margin-bottom: 50px;
+       color: #FFFFFF;
+    }
+
+    .service-cards {
+        flex-direction: column; /* Stack cards vertically */
+        gap: 20px; /* Space between cards */
+        margin-top: 8%; 
+    }
+    .services-section h2{
+     font-size: 20px;
+     color: #FFCC00;
+    }
+
+    .service-card {
+        flex: 1;
+        margin-left: -20px;
+        max-width: 400px;
+        padding: 50px;
+        background: rgba(0, 0, 0, 1);
+        border-radius: 20px;
+        box-shadow: 0 1px 30px 10px rgba(36, 28, 28, 0.8);
+        backdrop-filter: blur(15px);
+        z-index: 1;
+        animation: zoomIn 1.5s ease-in-out; 
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        width: 100%;
+        max-width: 1200px;
+       margin: 0 auto;
+}
+
+    .service-card p {
+        font-size: 17px; /* Adjust paragraph size for mobile */
+    }
+}
+/* Keyframes for background animation */
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 50% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+/* Default footer styles */
+footer {
+    background-color: #000000;
+    padding: 20px;
+    text-align: center;
+    margin-top: 6%;
+    margin-bottom: 0%;
+    box-shadow: 0 0 10px white;
+    position: relative;
+    height: 10vh;
+    width: 100%;
+}
+
+.social-media-links {
+    display: flex;
+    justify-content: center;
+    justify-items: center ;
+    gap: 80px; /* Add space between icons */
+}
+
+.social-media-links a {
+    color: #fff;
+    font-size: 40px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-media-links a:hover {
+    color: #f39c12;
+}
+
+.social-media-links i {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.social-media-links a:hover i {
+    transform: scale(1.2); /* Slight zoom effect on hover */
+}
+
+/* Media query for mobile devices */
+@media (max-width: 600px) {
+    footer {
+        padding: 15px;
+        Margin-top: 300%;
+        height: 10vh;
+    }
+
+    .social-media-links a {
+        font-size: 30px;
+        margin-top: 0 8px;
+    }
+}

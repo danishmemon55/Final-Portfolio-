@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div class="logo">
+        <div class="ico">D</div>
+        <h1>anish Memon</h1>
+    </div>
+    <nav>
+        <div class="burger">
+        <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/index 2.html">About</a></li>
+           <li><a href="/index.html">Services</a></li>
+           <li><a href="/Projects /index.html">Resume</a></li>
+
+            <li><a href="/Contact /index 1.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <section id="home">
+        <div class="home">
+            <div class="image">
+                <img src="/images /background 1.png" alt="Background Image">
+            </div>
+            <div class="home-content">
+                <h2>Hi, I'm <span class="loop">Frontend Developer</span></h2>
+                <h1>Danish Memon</h1>
+                <p>"Welcome to my portfolio! I specialize in frontend web development and graphic design. Explore my work and let's build something amazing together!"</p>
+                <div class="button">
+                    <a href="/index 2.html" class="contact-button">About Me</a>
+                </div>
+            </div>
+</div>
+
+        </div>
+    </section>
+        <!-- About Section -->
+
+    <section class="services-section">
+        <div class="container-wrapper">
+            <h1>My Services</h1>
+            <div class="service-cards">
+                <div class="service-card" id="frontend-card">
+                    <div class="card-content">
+                        <h2>Front-end Development</h2>
+                        <p>I specialize in creating visually stunning, responsive, and user-friendly websites using HTML, CSS, and JavaScript. My skills bring innovative digital experiences to life.</p>
+                    </div>
+                </div>
+                <div class="service-card" id="backend-card">
+                    <div class="card-content">
+                        <h2>Iconic-Graphic Designing</h2>
+                        <p>I specialize in crafting eye-catching logos, branding, and digital designs. My creative skills bring bold and engaging visuals to life. So much expertise in this field.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+            <div class="social-media-links">
+            <a href="https://www.instagram.com/danish_memon99/profilecard/?igsh=MTVhd2dxM3FvZ3Zwbg==" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61557986312689&mibextid=ZbWKwL" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="/Contact /index 1.html" /a><i class="fas fa-envelope"></i> 
+</div>
+
+        </div>
+</footer>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var newtyped = new Typed(".loop", { 
+            strings: ["Frontend Developer", "Graphic Designer"],
+            typeSpeed: 150,
+            backSpeed: 150,
+            loop: true
+        });
+
+        // Mobile Menu Toggle Script
+        const burger = document.querySelector('.burger');
+        const navLinks = document.querySelector('.nav-links');
+
+        burger.addEventListener('click', () => {
+            navLinks.classList.toggle('nav-active');
+        });
+    </script>
+</body>
+</html>
