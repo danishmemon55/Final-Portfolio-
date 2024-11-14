@@ -4,7 +4,406 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Form</title>
-    <link rel="stylesheet" href="Contact/style 1.css">
+    <style>
+        /* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 10vh;
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    padding: 0 20px;
+    box-shadow: 0 0 10px white;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo .ico {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #FFCC00;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* Desktop Navigation */
+header nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+    filter: drop-shadow(0 0 10px blue);
+}
+/* Burger Menu for Mobile */
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger i {
+    font-size: 28px;
+    color: #fff;
+}
+
+/* Mobile Navigation */
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav-active {
+    display: flex;
+    flex-direction: column;
+    background-color: #000;
+    position: absolute;
+    top: 10vh;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+}
+    header nav ul {
+        display: none;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-active {
+        display: flex;
+    }
+
+/* Mobile Navigation */
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+/* Burger Menu for Mobile */
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger i {
+    font-size: 28px;
+    color: #fff;
+}
+
+/* Mobile Navigation */
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav-active {
+    display: flex;
+    flex-direction: column;
+    background-color: #000;
+    position: absolute;
+    top: 10vh;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 0;
+    margin:0;
+}
+
+@media (max-width: 768px) {
+    header nav ul {
+        display: none;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-active {
+        display: flex;
+    }
+}
+
+/* Center the contact form container using Flexbox */
+.contact-form-wrapper {
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+    height: 100vh; /* Full height to ensure centering */
+}
+
+/* Contact form container */
+.contact-form-container {
+    background-color: rgba(2, 1, 1, 0.47);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 15px 25px 30px rgba(255, 249, 249, 0.2);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column; /* Make items stack vertically */
+    justify-content: center; /* Center the form items vertically */
+    align-items: center; /* Center the form items horizontally */
+    width: 100%;
+    max-width: 500px;
+    animation: fadeIn 1s ease-in-out;
+    margin-top: 170px; /* Remove margins to avoid offset */
+}
+/* Media query for mobile responsiveness */
+@media (max-width: 768px) {
+    .contact-form-container {
+        width: 90%; /* Adjust width on mobile */
+        padding: 15px;
+    }
+
+    .contact-form-container {
+        height: 740px; /* Smaller height for mobile */
+    }
+}
+
+    header nav ul {
+        display: flex; /* Ensure the navigation is displayed in desktop mode */
+    }
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h2 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 20px;
+    margin-left:0
+}
+/* Style for contact form guidance statement */
+.contact-form-guidance {
+    font-family: 'Poppins', sans-serif;    /* Modern, clean font */
+    color: #bbb;                           /* Soft, neutral color */
+    font-size: 15px;                       /* Slightly larger font size */
+    text-align: center;                    /* Center the text */
+    margin-bottom: 20px;                   /* Space below the statement */
+    line-height: 1.5;                      /* Better line spacing */
+    letter-spacing: 0.5px;                 /* Add slight letter spacing */
+}
+/* Adjust form container for smaller mobile screens */
+@media screen and (max-width: 600px) {
+    .form-container {
+        width: 90%; /* Increase width to take more space on small screens */
+        padding: 15px; /* Reduce padding */
+        margin: 10px auto; /* Keep it centered with some margin */
+    }
+
+    input, textarea, button {
+        font-size: 14px; /* Slightly smaller text for mobile */
+        padding: 8px; /* Reduce padding for input fields */
+    }
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+input[type="text"], input[type="email"], textarea {
+    width: 102%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    outline: none;
+}
+/* Button with hover animation */
+button {
+    background-color: #6a11cb;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    width: 102%;
+    cursor: pointer;
+    font-size: 18px;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.5s
+}
+
+button:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: 0.5s;
+}
+
+button:hover:before {
+    width: 100%;
+}
+
+button:hover {
+    background-color: #2575fc;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+}
+
+/* Input and text area placeholder styling */
+input::placeholder, textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.alert {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #28a745;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.alert.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.alert.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+.social-media-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.social-media-links a {
+  position: relative;
+  margin: 0 15px;
+  font-size: 40px;
+  color: #fff; /* Icon color */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-media-links a::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  background-color: #f39c12; /* Initial background color */
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1; /* Puts the background behind the icon */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.social-media-links a:hover::before {
+  transform: translate(-50%, -50%) scale(1.5);
+  opacity: 1;
+}
+
+.social-media-links a:hover {
+  transform: scale(1.3);
+  color: #f39c12; /* Change icon color on hover */
+}
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.6);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.7;
+  }
+}
+
+.social-media-links a:hover::before {
+  animation: pulse 1s infinite;
+}
+    </style>
+        
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
